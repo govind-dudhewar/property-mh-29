@@ -8,17 +8,56 @@
     
     <div style="text-align:center" class="container">
         <h3>LOGIN FORM </h3>
-        <label for="uname"><b>username</b></label>
-        <input type="text" placeholder="Enter Username" name="uname" required><br><br>
+        <label for="uname"><b>Username</b></label>
+        <input type="text" placeholder="Enter Username" name="uname" id="uname" required><br><br>
   
         <label for="psw"><b>Password</b></label>
-        <input type="password" placeholder="Enter Password" name="psw" required><br><br>
+        <input type="password" placeholder="Enter Password" name="psw" id="psw" required><br><br>
           
-        <button type="submit">Login</button><br><br>
+        <button  id="myBtn" type="submit">Login</button><br><br>
         <label>
           <input type="checkbox" checked="checked" name="remember"> Remember me
-        </label>
+        </label><br>
+        <strong> <p id="demo">Guest</p>  </strong>
+        <strong> <p id="func">Guest</p>  </strong>
+
+
+          
       </div>
+      <script>
+
+function myFunc(){
+  console.log('my text');
+  var uname = document.getElementById('uname').value;
+  
+  document.getElementById('demo').innerText = uname;
+
+  var psw = document.getElementById('psw').value;
+  
+  //document.getElementById('demo').innerText = '';
+  document.getElementById('func').innerText = psw;
+  if ( uname == "govind" && psw == "123") {
+            document.getElementById("demo").innerHTML = "sucess!";
+          }
+
+  else{document.getElementById("demo").innerHTML = "faild!";}
+}
+
+
+
+
+
+
+        document.getElementById("myBtn").addEventListener('click',myFunc);
+        //document.getElementById("myBtn").addEventListener("click",);
+        
+        // function displayuname() {
+        //   document.getElementById("uname").innerHTML = uname();
+  
+        // }
+       
+        </script>
+        
  </body>    
  </head>      
 </html>
